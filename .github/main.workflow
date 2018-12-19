@@ -5,7 +5,7 @@ workflow "New workflow" {
 
 action "GitHub Action for Docker" {
   uses = "actions/docker/cli@76ff57a"
-  runs = "build -t kkrampa/react-weather ."
+  args = "build -t kkrampa/react-weather ."
 }
 
 action "Docker Registry" {
@@ -17,5 +17,5 @@ action "Docker Registry" {
 action "GitHub Action for Docker-1" {
   uses = "actions/docker/cli@76ff57a"
   needs = ["Docker Registry"]
-  runs = "push kkrampa/react-weather"
+  args = "push kkrampa/react-weather"
 }
